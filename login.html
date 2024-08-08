@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("https://sutrixgroup.com/export/sites/sutrixgroup/.galleries/events/register-form-background.png");
+        }
+
+        .loginForm {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            /* Ensure form has a reasonable width */
+        }
+
+        .loginForm input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .loginForm .btn {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            width: 100%;
+            /* Full width button */
+            height: 40px;
+            /* Increased height for better UX */
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .loginForm .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="loginForm">
+            <form id="loginForm">
+                <input type="text" class="userName" id="userName" placeholder="Username">
+                <input type="password" class="password" id="password" placeholder="Password">
+                <button class="btn" id="btn" type="submit">Submit</button>
+                <div class="message" id="message"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let button = document.getElementById("btn")
+        button.addEventListener("click", (e) => {
+            e.preventDefault()
+            // Retrieve user input
+            let userName = document.getElementById("userName").value;
+            let password = document.getElementById("password").value;
+
+            // Retrieve stored credentials
+            let storedUsername = localStorage.getItem("useName");
+            let storedPassword = localStorage.getItem("password");
+
+            // Check if entered credentials match stored credentials
+            if (userName === storedUsername && password === storedPassword) {
+                window.location.assign("./index.html");
+            }
+            if (userName !== storedUsername && password !== storedPassword) {
+                document.getElementById("message").textContent = "Invalid username or password. Please try again.";
+            }
+        });
+    </script>
+</body>
+
+</html>
