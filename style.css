@@ -145,7 +145,7 @@
 
 
 /* media queries for mobile */
-@media only screen and (min-width : 480px) and (max-width : 660px){
+@media only screen and (max-width : 600px){
     .top_image{
         height: 50px;
         width: 50px;
@@ -161,14 +161,6 @@
     .container_para{
         font-size: 20px;
     }
-    /* .image1_container{
-        margin-left: 500%;
-        margin-top: 12%;
-    }
-    .image2_container{
-        margin-left: 100%;
-        margin-top: 5%;
-    } */
     .container_para{
         padding: 2%;
     }
