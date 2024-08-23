@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html,body{
+    overflow: hidden;
+}
 .container{
     height: 100vh;
     width: 100vw;
@@ -143,38 +146,42 @@
     }
 }
 
-
 /* media queries for mobile */
-@media only screen and (max-width : 600px){
-    .top_image{
+@media only screen and (max-width: 600px) {
+    .top_image {
         height: 50px;
         width: 50px;
         margin-top: 5%;
-        margin-right: 5%;
+        margin-right: 8%;
     }
-    .container_heading{
-        padding-top: 20%;
+
+    .container_heading {
+        padding-top: 15%;
         padding-right: 2%;
-        font-size: 25px;
+        font-size: 22px;
         font-weight: bolder;
+        text-align: center; /* Center text if needed */
     }
-    .container_para{
-        font-size: 20px;
-    }
-    .container_para{
+
+    .container_para {
+        font-size: 18px;
         padding: 2%;
     }
-    .image-1{
-        visibility: hidden;
+
+    .image-1, .image-2 {
+        display: none; /* Better practice than visibility: hidden for hidden images */
     }
-    .image-2{
-        visibility: hidden;
+
+    .para_data {
+        width: 90%; /* Use percentage to adapt to different screen sizes */
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center; /* Center text if needed */
     }
-    .para_data{
-        width: 500px;
-        margin-left: 18%;
-    }
-    .btn{
-        width: 130px;
+
+    .btn {
+        width: 100px; /* Adjust button width to fit better */
+        font-size: 16px; /* Adjust font size for better readability */
     }
 }
+
